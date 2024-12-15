@@ -1,0 +1,73 @@
+/* Contenedor principal */
+.list-users-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    grid-gap: 20px; /* Espacio entre tarjetas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar en la pantalla */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fondo claro */
+    border-radius: 8px;
+}
+
+/* Tarjetas individuales */
+.user-card {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación en hover */
+    text-align: center;
+}
+
+/* Hover para las tarjetas */
+.user-card:hover {
+    transform: translateY(-5px); /* Elevar ligeramente */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Aumentar sombra */
+}
+
+/* Estilos para el texto */
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.user-email {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Enlaces */
+.user-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navegación y barra de búsqueda */
+.navbar {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-bar {
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Adaptabilidad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .list-users-container {
+        grid-template-columns: repeat(2, 1fr); /* Cambiar a 2 columnas */
+    }
+}
+
+@media (max-width: 480px) {
+    .list-users-container {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+}

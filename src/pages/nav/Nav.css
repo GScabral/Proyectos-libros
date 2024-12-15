@@ -1,0 +1,56 @@
+.navbar-container {
+    background-color: #007bff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.toggle-search-button {
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.toggle-search-button:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    border-color: #0056b3;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    background-color: #ffffff;
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-buttons button:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    border-color: #0056b3;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+}

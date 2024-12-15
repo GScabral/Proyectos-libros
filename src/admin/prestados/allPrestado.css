@@ -1,0 +1,59 @@
+/* Contenedor principal */
+.list-borrowed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para cada tarjeta de libro */
+.book-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Información de cada campo */
+.book-card p {
+    margin: 5px 0;
+    color: #333;
+}
+
+/* Título del libro */
+.book-card .book-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Estilo para la editorial y el autor */
+.book-card .book-editorial,
+.book-card .book-author {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Estilo específico para el estado del libro */
+.book-card .book-status {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Estado prestado (borrowed) */
+.book-card .book-status.borrowed {
+    color: #ffffff;
+    background-color: #ff6b6b;
+}
+
+/* Estado disponible */
+.book-card .book-status.available {
+    color: #ffffff;
+    background-color: #4caf50;
+}

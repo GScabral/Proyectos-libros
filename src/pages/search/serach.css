@@ -1,0 +1,47 @@
+.div-search {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 400px;
+    background-color: #f1f3f6;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.div-search input[type="search"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.div-search input[type="search"]::placeholder {
+    color: #999;
+}
+
+.div-search button.lupa {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.div-search button.lupa:hover {
+    background-color: #0056b3;
+}
+
+.div-search .bi-search {
+    font-size: 1.2rem;
+}

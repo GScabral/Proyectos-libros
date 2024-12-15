@@ -1,0 +1,60 @@
+/* General container */
+.admin-user-container {
+    margin-left: 250px; /* Ajusta esto según el ancho de la barra lateral */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Title styles */
+.admin-user-h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* User detail container */
+.admin-user-page-left {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* User detail titles */
+.admin-user-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+/* User detail paragraphs */
+.admin-user-author, 
+.admin-user-category {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .admin-user-container {
+        margin-left: 0; /* Elimina el margen para dispositivos móviles */
+        padding: 10px;
+    }
+
+    .admin-user-h1 {
+        font-size: 20px;
+    }
+
+    .admin-user-title, 
+    .admin-user-author, 
+    .admin-user-category {
+        font-size: 14px;
+    }
+}

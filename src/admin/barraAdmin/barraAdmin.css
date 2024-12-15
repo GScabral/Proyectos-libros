@@ -1,0 +1,35 @@
+.sidebar-admin {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.hamburger-menu {
+    display: block;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-links {
+    display: none;
+}
+
+.menu-links.show {
+    display: block;
+}
+
+/* Ocultar el menú y botón en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar-admin {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
