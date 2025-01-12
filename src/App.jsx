@@ -14,24 +14,25 @@ function App() {
 
 
 
-  return (
-    <div>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Detail/:id' element={<Detail />} />
-        <Route path='/CreateUser' element={<NewUser />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/alquilar/:id' element={<Alquilar />} />
-        <Route path='/Returned/:id' element={<Returned />} />
-        <Route path='/Perfil' element={<Perfil />} />
-        <Route path='/RecoverPassword' element={<RecoverPassword />} />
-        <Route path='/ResetContraseña/:token' element={<ResetContraseña />} />
-        <Route path='/admin/*' element={<PanelAdmin />} />
-      </Routes>
-    </div>
-  )
+  function App() {
+    return (
+      <Router basename="/Proyectos-libros">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/Detail/:id' element={<Detail />} />
+          <Route path='/CreateUser' element={<NewUser />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/alquilar/:id' element={<Alquilar />} />
+          <Route path='/Returned/:id' element={<Returned />} />
+          <Route path='/Perfil' element={<Perfil />} />
+          <Route path='/RecoverPassword' element={<RecoverPassword />} />
+          <Route path='/ResetContraseña/:token' element={<ResetContraseña />} />
+          <Route path='/admin/*' element={<PanelAdmin />} />
+        </Routes>
+      </Router>
+    )
+  }
 }
-
 
 
 export default App
