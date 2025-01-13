@@ -29,7 +29,7 @@ export const ADMIN_LOGIN_SUCCESS = "ADMIN_LOGIN_SUCCESS"
 
 
 
-const BASE_URL = "https://libros-back.vercel.app";
+const BASE_URL = "https://libros-back.vercel.app/api";
 
 
 //GET
