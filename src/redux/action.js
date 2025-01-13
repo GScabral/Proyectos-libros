@@ -29,72 +29,71 @@ export const ADMIN_LOGIN_SUCCESS = "ADMIN_LOGIN_SUCCESS"
 
 
 
-
+const BASE_URL = "https://libros-back.vercel.app";
 
 
 //GET
 export const getBooks = () => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/libros/ListBooks`)
+            const response = await axios.get(`${BASE_URL}/libros/ListBooks`);
             dispatch({
                 type: GET_BOOKS,
                 payload: response.data.items
-            })
-
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
+
 export const getUsers = () => {
     return async function (dispatch) {
-        try { 
-            const response = await axios.get(`http://localhost:3006/create/listUser`)
+        try {
+            const response = await axios.get(`${BASE_URL}/create/listUser`);
             dispatch({
                 type: GET_USERS,
                 payload: response.data
-            })
-
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
+
 export const getUserById = (id) => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/create/user/${id}`)
-            console.log(response)
+            const response = await axios.get(`${BASE_URL}/create/user/${id}`);
+            console.log(response);
             dispatch({
                 type: GET_USER_BYID,
                 payload: response.data
-            })
-
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 export const getTime = (id) => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/create/time/${id}`)
+            const response = await axios.get(`${BASE_URL}/create/time/${id}`);
             dispatch({
                 type: GET_TIME,
                 payload: response.data
-            })
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 export const getUserByEmail = (email) => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/create/userEmail/${email}`);
+            const response = await axios.get(`${BASE_URL}/create/userEmail/${email}`);
 
             // Si la API devuelve un array, toma el primer elemento
             const userData = Array.isArray(response.data) ? response.data[0] : response.data;
@@ -110,70 +109,62 @@ export const getUserByEmail = (email) => {
 };
 
 export const getUserAndBook = (id) => {
-    
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/libros/librosPrestados/${id}`)
-            console.log(response)
+            const response = await axios.get(`${BASE_URL}/libros/librosPrestados/${id}`);
+            console.log(response);
 
             dispatch({
                 type: GET_USER_AND_BOOK,
                 payload: response.data
-            })
-
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
-
-
-
-
+    };
+};
 
 export const searchBook = (name) => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/libros/ListBooks/${name}`)
+            const response = await axios.get(`${BASE_URL}/libros/ListBooks/${name}`);
             dispatch({
                 type: GET_BYNAME,
                 payload: response.data.items
-            })
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
-
+    };
+};
 
 export const searchAuthor = (author) => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/libros/SearchAuthor/${author}`)
+            const response = await axios.get(`${BASE_URL}/libros/SearchAuthor/${author}`);
             dispatch({
                 type: SEARCH_AUTHOR,
                 payload: response.data.items
-            })
+            });
         } catch (error) {
-            console.log(error)
-
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 export const checkEmail = (email) => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/create/chekEmail`, { params: { email } })
+            const response = await axios.get(`${BASE_URL}/create/chekEmail`, { params: { email } });
             dispatch({
                 type: CHECK_EMAIL,
                 payload: response.data
-            })
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
+    };
+};
 
 export const detailBooK = (id) => {
     return async function (dispatch) {
@@ -182,7 +173,7 @@ export const detailBooK = (id) => {
 
         try {
             // Realizar la solicitud de manera asíncrona
-            const response = await axios.get(`http://localhost:3006/libros/detailBook/${id}`);
+            const response = await axios.get(`${BASE_URL}/libros/detailBook/${id}`);
 
             // Verificar que haya datos válidos antes de proceder
             if (response.data) {
@@ -205,48 +196,44 @@ export const detailBooK = (id) => {
                 payload: "Error al obtener los detalles del libro. Intenta nuevamente más tarde."
             });
         }
-    }
+    };
 };
-
 
 export const checkDispible = (id) => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/libros/disponible`, { params: { id } })
+            const response = await axios.get(`${BASE_URL}/libros/disponible`, { params: { id } });
             dispatch({
                 type: CHECK_BORROWED,
                 payload: response.data
-            })
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
-
+    };
+};
 
 export const allBorrowed = () => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`http://localhost:3006/libros/prestados`)
-            console.log(response)
+            const response = await axios.get(`${BASE_URL}/libros/prestados`);
+            console.log(response);
 
             dispatch({
                 type: ALL_BORROWED,
                 payload: response.data
-            })
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
-}
-
+    };
+};
 
 //POST
 export const createUser = (userData) => {
     return async function (dispatch) {
-
         try {
-            const response = await axios.post(`http://localhost:3006/create/createUser`, userData)
+            const response = await axios.post(`${BASE_URL}/create/createUser`, userData);
 
             if (response.status === 200) {
                 if (response.data) {
@@ -258,24 +245,23 @@ export const createUser = (userData) => {
                     console.error('No se recibieron datos en la respuesta del servidor');
                 }
             } else {
-
                 throw new Error('Error en la solicitud: Código de estado ' + response.status);
             }
             return response;
         } catch (error) {
-            console.error('Error en al solicitud', error)
-            console.error("error capturado", error)
+            console.error('Error en al solicitud', error);
+            console.error("error capturado", error);
             throw error;
         }
-    }
-}
+    };
+};
 
 export const alquilarLibro = (borrowData) => {
-    console.log(borrowData)
+    console.log(borrowData);
     return async function (dispatch) {
         try {
-            const response = await axios.post(`http://localhost:3006/libros/retirar`, borrowData);
-            console.log(response)
+            const response = await axios.post(`${BASE_URL}/libros/retirar`, borrowData);
+            console.log(response);
 
             if (response.status === 200) {
                 if (response.data) {
@@ -283,67 +269,63 @@ export const alquilarLibro = (borrowData) => {
                         type: BORROWED,
                         payload: response.data
                     });
-
                 }
             }
             return response;
         } catch (error) {
-            console.error('Error en al solicitud', error)
-            console.error("error capturado", error)
+            console.error('Error en al solicitud', error);
+            console.error("error capturado", error);
             throw error;
         }
-    }
-}
+    };
+};
 
 export const loginUser = (userData) => {
     return async function (dispatch) {
         try {
-            const response = await axios.post(`http://localhost:3006/create/login`, userData);
-            console.log(response)
+            const response = await axios.post(`${BASE_URL}/create/login`, userData);
+            console.log(response);
 
             if (response.status === 200) {
                 if (response.data) {
                     dispatch({
-
                         type: LOGIN,
                         payload: response.data
-
-                    })
+                    });
                 }
             }
 
-            return response
+            return response;
         } catch (error) {
-            console.error("Error en la solicutud:", error)
-            console.error("erro capturado", error)
-            throw error
+            console.error("Error en la solicutud:", error);
+            console.error("erro capturado", error);
+            throw error;
         }
-    }
-}
+    };
+};
 
 export const devolver = (dataBook) => {
     return async function (dispatch) {
         try {
-            const response = await axios.post(`http://localhost:3006/libros/devolver`, dataBook)
+            const response = await axios.post(`${BASE_URL}/libros/devolver`, dataBook);
             if (response.status === 20) {
                 if (response.data) {
                     dispatch({
                         type: DEVOLVER,
                         payload: response.data,
-                    })
+                    });
                 }
             }
             return response;
         } catch (error) {
-            console.error("error ne la solicitud", error)
-            console.error("error capturado", error)
-            throw error
+            console.error("error ne la solicitud", error);
+            console.error("error capturado", error);
+            throw error;
         }
-    }
-}
+    };
+};
 
 export const cerrarSesion = () => {
-
     return {
         type: CERRAR_SESION,
     };
@@ -352,7 +334,7 @@ export const cerrarSesion = () => {
 export const enviarCorreo = (title, idBook, name, correo, fecha) => {
     return async (dispatch) => {
         try {
-            const response = await axios.post('http://localhost:3006/libros/sendEmail', {
+            const response = await axios.post(`${BASE_URL}/libros/sendEmail`, {
                 title: title,
                 idBook: idBook,
                 correo: correo,
@@ -367,49 +349,45 @@ export const enviarCorreo = (title, idBook, name, correo, fecha) => {
     };
 };
 
-
 export const recoverPassword = (email) => {
     return async () => {
         try {
-            const response = await axios.post(`http://localhost:3006/create/recover-password`, {
+            const response = await axios.post(`${BASE_URL}/create/recover-password`, {
                 email: email
-            })
+            });
         } catch (error) {
             // Manejo de errores
             console.error('Error al enviar el correo:', error);
         }
-    }
-
-}
+    };
+};
 
 export const resetPassword = (token, newPassword) => {
     return async () => {
         try {
-            const response = await axios.post(`http://localhost:3006/create/reset-password`, {
+            const response = await axios.post(`${BASE_URL}/create/reset-password`, {
                 token: token,
                 newPassword: newPassword
-            })
+            });
         } catch (error) {
             // Manejo de errores
             console.error('Error al enviar el correo:', error);
         }
-    }
-
-}
-
+    };
+};
 
 export const LoginAdmin = (password) => {
     return async (dispatch) => {
         try {
-            const response = await axios.post(`http://localhost:3006/admin/loginc`, {
+            const response = await axios.post(`${BASE_URL}/admin/loginc`, {
                 password: password
-            })
-            dispatch({ type: 'ADMIN_LOGIN_SUCCESS' })
+            });
+            dispatch({ type: 'ADMIN_LOGIN_SUCCESS' });
             return response;
         } catch (error) {
             console.error(error);
             dispatch({ type: 'ADMIN_LOGIN_FAILURE', payload: { error: error.message } });
             throw error;
         }
-    }
-}
+    };
+};
