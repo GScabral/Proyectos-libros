@@ -27,26 +27,26 @@ export const ADMIN_LOGIN_SUCCESS = "ADMIN_LOGIN_SUCCESS"
 //PATCH
 
 
-
-
-const BASE_URL = "https://libros-back.vercel.app/api";
+const BASE_URL = process.env.NODE_ENV === 'production'
+    ? 'https://libros-back.vercel.app'
+    : 'http://localhost:3006';
 
 
 //GET
 export const getBooks = () => {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`${BASE_URL}/libros/ListBooks`);
+            const response = await axios.get(`${BASE_URL}/libros/ListBooks`, { withCredentials: true });
+            console.log("Respuesta de /libros/ListBooks:", response.data); // Log de respuesta
             dispatch({
                 type: GET_BOOKS,
-                payload: response.data.items
+                payload: response.data
             });
         } catch (error) {
-            console.log(error);
+            console.error("Error en la solicitud a /libros/ListBooks:", error); // Log de error
         }
     };
 };
-
 export const getUsers = () => {
     return async function (dispatch) {
         try {
