@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getBooks } from '../redux/action';
-import Cards from "./cards/cards";
+import Cards from "./cards/Cards";
 import Nav from "./nav/Nav";
 import "./Home.css";
 
