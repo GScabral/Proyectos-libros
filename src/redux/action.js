@@ -36,7 +36,9 @@ const BASE_URL = process.env.NODE_ENV === 'production'
 export const getBooks = () => {
     return async function (dispatch) {
         try {
+            console.log("Realizando solicitud a /libros/ListBooks"); // Log antes de la solicitud
             const response = await axios.get(`${BASE_URL}/libros/ListBooks`, { withCredentials: true });
+            console.log("Respuesta de /libros/ListBooks:", response.data); // Log de la respuesta
             dispatch({
                 type: GET_BOOKS,
                 payload: response.data.items
