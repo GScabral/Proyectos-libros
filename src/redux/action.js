@@ -28,7 +28,7 @@ export const ADMIN_LOGIN_SUCCESS = "ADMIN_LOGIN_SUCCESS"
 
 
 const BASE_URL = process.env.NODE_ENV === 'production'
-    ? 'https://libros-back.vercel.app/api'
+    ? 'https://libros-back-gscabrals-projects.vercel.app/api'
     : 'http://localhost:3006/api';
 
 
